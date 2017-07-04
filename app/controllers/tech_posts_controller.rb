@@ -71,8 +71,8 @@ class TechPostsController < ApplicationController
   end
 
 
-def upote
-  @tech_post.upote_from current_user
+def upvote
+  @tech_post.upvote_from current_user
   redirect_to tech_posts_path
 end
 

@@ -69,8 +69,8 @@ class SportPostsController < ApplicationController
   end
 
 
-def upote
-  @sport_post.upote_from current_user
+def upvote
+  @sport_post.upvote_from current_user
   redirect_to sport_posts_path
 end
 

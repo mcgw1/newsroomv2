@@ -71,8 +71,8 @@ class PolPostsController < ApplicationController
     end
   end
 
-def upote
-  @pol_post.upote_from current_user
+def upvote
+  @pol_post.upvote_from current_user
   redirect_to pol_posts_path
 end
 

@@ -23,5 +23,25 @@
 
 
 
+<!--code for buttons taken from codeplace, also avalible heree http://techqa.info/programming/tag/local?after=39279565 -->
+
+<%= link_to like_wnews_post_path(@wnews_post), class: "like", method: :put do %>
+  <button type= "button" class = "btn btn-info" aria-label= "Left Align">
+   <span class= "glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden= "true"></span>
+  <span class= "badge"><%= @wnews_post.get_upvotes.size%></span>
+ </button>
+<%end%>
+
+
+<%= link_to dislike_wnews_post_path(@wnews_post), class: "like", method: :put do %>
+<button type= "button" class = "btn btn-info" aria-label= "Left Align">
+<span class= "glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden= "true"></span>
+<span class= "badge"><%= @wnews_post.get_downvotes.size%></span>
+</button>
+<%end%>
+
+
+
+
 <%= link_to 'Edit', edit_wnews_post_path(@wnews_post) %> |
 <%= link_to 'Back', wnews_posts_path %>

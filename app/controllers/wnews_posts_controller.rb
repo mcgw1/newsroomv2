@@ -69,8 +69,8 @@ class WnewsPostsController < ApplicationController
     end
   end
 
-def upote
-  @wnews_post.upote_from current_user
+def upvote
+  @wnews_post.upvote_from current_user
   redirect_to wnews_posts_path
 end
 
