@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @allpost.title %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @allpost.article %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @allpost.image %>
+</p>
+
+<%= link_to 'Edit', edit_allpost_path(@allpost) %> |
+<%= link_to 'Back', allposts_path %>

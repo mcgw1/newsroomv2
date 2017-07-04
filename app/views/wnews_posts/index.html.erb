@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wnews Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Article</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wnews_posts.each do |wnews_post| %>
+      <tr>
+        <td><%= wnews_post.title %></td>
+        <td><%= wnews_post.article %></td>
+        <td><%= wnews_post.image %></td>
+        
+         <td><%= link_to 'Continue Reading', wnews_post %></td>
+          <% if wnews_post.user == current_user %>
+        
+        
+        <td><%= link_to 'Show', wnews_post %></td>
+        <td><%= link_to 'Edit', edit_wnews_post_path(wnews_post) %></td>
+        <td><%= link_to 'Destroy', wnews_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

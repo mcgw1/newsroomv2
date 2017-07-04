@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pol Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Article</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pol_posts.each do |pol_post| %>
+      <tr>
+        <td><%= pol_post.title %></td>
+        <td><%= pol_post.article %></td>
+        <td><%= pol_post.image %></td>
+        
+        <td><%= link_to 'Continue Reading', pol_post %></td>
+          <% if pol_post.user == current_user %>
+        
+        
+        <td><%= link_to 'Show', pol_post %></td>
+        <td><%= link_to 'Edit', edit_pol_post_path(pol_post) %></td>
+        <td><%= link_to 'Destroy', pol_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

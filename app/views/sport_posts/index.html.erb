@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sport Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Article</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sport_posts.each do |sport_post| %>
+      <tr>
+        <td><%= sport_post.title %></td>
+        <td><%= sport_post.article %></td>
+        <td><%= sport_post.image %></td>
+        
+        
+         <td><%= link_to 'Continue Reading', sport_post %></td>
+          <% if sport_post.user == current_user %>
+        
+        
+        <td><%= link_to 'Show', sport_post %></td>
+        <td><%= link_to 'Edit', edit_sport_post_path(sport_post) %></td>
+        <td><%= link_to 'Destroy', sport_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

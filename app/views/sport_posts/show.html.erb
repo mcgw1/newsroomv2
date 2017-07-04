@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sport_post.title %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @sport_post.article %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @sport_post.image %>
+</p>
+
+<strong>Image:</strong>
+  <%= @sport_post.image %>
+  <%= image_tag @sport_post.post_img.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_sport_post_path(@sport_post) %> |
+<%= link_to 'Back', sport_posts_path %>

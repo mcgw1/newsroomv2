@@ -1,0 +1,46 @@
+
+<%= form_for @pol_post, html: { multipart: true } do |form| %>
+
+  <% if pol_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pol_post.errors.count, "error") %> prohibited this pol_post from being saved:</h2>
+
+
+      <ul>
+      <% pol_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :pol_post_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :article %>
+    <%= form.text_area :article, id: :pol_post_article %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :pol_post_image %>
+  </div>
+  
+  
+    <div class="field">
+    <%= form.label :Image %>
+    <%= form.file_field :post_img, id: :post_img  %>
+  
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

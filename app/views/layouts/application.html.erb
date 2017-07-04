@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newsroom</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+<!--  I originaly used this code as given by devise
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      Ithen changed it to the following as I am using bootstrap. I soursed this from the following git repository: https://github.com/mackenziechild/raddit
+    I need to add the alrt class
+    --!>
+    
+    <% flash.each do |name, msg| %>
+      <% content_tag(:div, msg, class: "alart alart-#{name}") %>
+    <% end %>
+    
+    
+#below code is supplied by devise!    
+     <% if user_signed_in? %>
+    
+Hey, your logged in as <strong><%= current_user.email %></strong>.
+
+
+      <ul>
+        <li><%= link_to 'Post an Article in Tech', new_tech_post_path %></li>
+        
+        <li><%= link_to 'Post an Article in Politics', new_pol_post_path %></li>
+        
+        <li><%= link_to 'Post an Article in Spot', new_sport_post_path %></li>
+        
+        <li><%= link_to 'Post an Article in Wold News', new_wnews_post_path %></li>
+
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      
+          <% else %>
+      
+       <ul>    
+         <li><%= link_to "Sign up", new_user_registration_path %></li>
+      
+         <li><%= link_to "Login", new_user_session_path %></li>
+        <ul>
+    <% end %>
+    
+    
+    
+    <%= yield %>
+  </body>
+</html>

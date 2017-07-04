@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Allposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Article</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allposts.each do |allpost| %>
+      <tr>
+        <td><%= allpost.title %></td>
+        <td><%= allpost.article %></td>
+        <td><%= allpost.image %></td>
+        
+        <td><%= link_to 'Continue Reading', allpost %></td>
+          <% if allpost.user == current_user %>
+        
+        <td><%= link_to 'Show', allpost %></td>
+        <td><%= link_to 'Edit', edit_allpost_path(allpost) %></td>
+        <td><%= link_to 'Destroy', allpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

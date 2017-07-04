@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tech Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Article</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tech_posts.each do |tech_post| %>
+      <tr>
+        <td><%= tech_post.title %></td>
+        <td><%= tech_post.article %></td>
+        <td><%= tech_post.image %></td>
+        
+         <td><%= link_to 'Continue Reading', tech_post %></td>
+          <% if tech_post.user == current_user %>
+        
+        
+        <td><%= link_to 'Show', tech_post %></td>
+        <td><%= link_to 'Edit', edit_tech_post_path(tech_post) %></td>
+        <td><%= link_to 'Destroy', tech_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
