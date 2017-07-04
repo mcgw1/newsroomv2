@@ -10,7 +10,7 @@ class PolPostsController < ApplicationController
   # GET /pol_posts
   # GET /pol_posts.json
   def index
-    @pol_posts = PolPost.all
+    @pol_posts = PolPost.all.order(:cached_votes_up => :desc)
   end
 
   # GET /pol_posts/1

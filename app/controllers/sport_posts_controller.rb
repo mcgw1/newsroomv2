@@ -8,7 +8,7 @@ class SportPostsController < ApplicationController
   # GET /sport_posts
   # GET /sport_posts.json
   def index
-    @sport_posts = SportPost.all
+    @sport_posts = SportPost.all.order(:cached_votes_up => :desc)
   end
 
   # GET /sport_posts/1

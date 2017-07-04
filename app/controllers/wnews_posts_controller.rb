@@ -7,7 +7,7 @@ class WnewsPostsController < ApplicationController
   # GET /wnews_posts
   # GET /wnews_posts.json
   def index
-    @wnews_posts = WnewsPost.all
+    @wnews_posts = WnewsPost.all.order(:cached_votes_up => :desc)
   end
 
   # GET /wnews_posts/1

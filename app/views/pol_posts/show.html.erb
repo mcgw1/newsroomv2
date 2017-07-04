@@ -27,7 +27,7 @@
 <%end%>
 
 
-<%= link_to dislike_post_path(@post), class: "like", method: :put do %>
+<%= link_to dislike_pol_post_path(@pol_post), class: "like", method: :put do %>
 <button type= "button" class = "btn btn-info" aria-label= "Left Align">
 <span class= "glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden= "true"></span>
 <span class= "badge"><%= @pol_post.get_downvotes.size%></span>

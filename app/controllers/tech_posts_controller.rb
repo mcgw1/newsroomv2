@@ -8,7 +8,7 @@ class TechPostsController < ApplicationController
   # GET /tech_posts
   # GET /tech_posts.json
   def index
-    @tech_posts = TechPost.all
+    @tech_posts = TechPost.all.order(:cached_votes_up => :desc)
   end
 
   # GET /tech_posts/1
