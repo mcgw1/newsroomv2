@@ -9,6 +9,7 @@ class AllpostsController < ApplicationController
   # GET /allposts.json
   def index
     @allposts = Allpost.all
+   @sport_posts = SportPost.all
   end
 
   # GET /allposts/1
@@ -65,11 +66,27 @@ class AllpostsController < ApplicationController
     end
   end
 
+###################
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###################
 
   private
     # Use callbacks to share common setup or constraints between actions.

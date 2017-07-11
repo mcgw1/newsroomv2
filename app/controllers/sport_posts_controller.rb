@@ -10,7 +10,7 @@ class SportPostsController < ApplicationController
   def index
     @sport_posts = SportPost.all.order(:cached_votes_up => :desc)
   end
-
+  
   # GET /sport_posts/1
   # GET /sport_posts/1.json
   def show
@@ -78,6 +78,25 @@ def downvote
   @sport_post.downvote_from current_user
   redirect_to sport_posts_path
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
